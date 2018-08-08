@@ -5,7 +5,8 @@ import todoList from './todos.json';
 
 class TodoItem extends Component {
   state = {
-    checked: false
+    checked: false,
+    destroy: false
     }
 
   handleCheckClick = () =>{
@@ -13,14 +14,22 @@ class TodoItem extends Component {
       checked: !this.state.checked
     })
   }
+
+  handleDestroyOnButtonClick = () => {
+    this.setState({
+      destroy: !this.state.destroy
+    })
+  }
+
   render() { 
+
     return ( 
         <li className={this.state.checked ? 'completed' : null}>
-          <div className='view'>
+          <div className={this.state.destroy ? 'destroy' : 'view'}>
             <input className='toggle' type='checkbox' checked={this.state.checked} 
             onChange={this.handleCheckClick}/>
             <label>{this.props.text}</label>
-            <button className='destroy'></button>
+            <button className='destroy' onClick={this.handleDestroyOnButtonClick}></button>
           </div>
         </li>
      );
