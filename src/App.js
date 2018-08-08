@@ -15,7 +15,7 @@ class TodoItem extends Component {
   }
   render() { 
     return ( 
-        <li className={this.state.checked ? 'completed' : 'editing'}>
+        <li className={this.state.checked ? 'completed' : null}>
           <div className='view'>
             <input className='toggle' type='checkbox' checked={this.state.checked} 
             onChange={this.handleCheckClick}/>
