@@ -25,7 +25,7 @@ class TodoItem extends Component {
 
     return ( 
         <li className={this.state.checked ? 'completed' : null}>
-          <div className={this.state.destroy ? 'destroy' : 'view'}>
+          <div className={this.state.destroy ? 'destroy-item' : 'view'}>
             <input className='toggle' type='checkbox' checked={this.state.checked} 
             onChange={this.handleCheckClick}/>
             <label>{this.props.text}</label>
