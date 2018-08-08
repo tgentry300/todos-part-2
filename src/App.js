@@ -20,7 +20,7 @@ class TodoItem extends Component {
             <input className='toggle' type='checkbox' checked={this.state.checked} 
             onChange={this.handleCheckClick}/>
             <label>{this.props.text}</label>
-            {/* <button className='destroy'></button> */}
+            <button className='destroy'></button>
           </div>
         </li>
      );
